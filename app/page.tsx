@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { ModeToggle } from "@/components/theme-toggle"; // Import the theme toggle component
+import { ModeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
+import Modal from "./modal-example";
 
 export default function Home() {
   return (
@@ -48,6 +50,7 @@ export default function Home() {
           >
             Read our docs
           </a>
+          <Modal />
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
