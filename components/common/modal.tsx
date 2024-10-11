@@ -8,7 +8,7 @@ import {
   DialogFooter,
   DialogClose,
   DialogHeader,
-} from "./ui/dialog";
+} from "@/components/ui/dialog";
 import {
   Drawer,
   DrawerTrigger,
@@ -18,7 +18,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerDescription,
-} from "./ui/drawer";
+} from "@/components/ui/drawer";
 import { ModalProps } from "@/lib/hooks/use-modal";
 import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
 

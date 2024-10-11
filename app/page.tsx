@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { ModeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/theme/theme-toggle";
 import Modal from "./modal-example";
 
 export default function Home() {

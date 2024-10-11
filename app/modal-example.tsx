@@ -1,6 +1,6 @@
 "use client";
 
-import Modal from "@/components/modal";
+import Modal from "@/components/common/modal";
 import { Button } from "@/components/ui/button";
 import useModal, { ModalProps } from "@/lib/hooks/use-modal";
 
