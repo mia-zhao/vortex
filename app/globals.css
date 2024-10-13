@@ -81,7 +81,9 @@ body {
   footer {
     @apply bg-muted text-muted-foreground;
   }
+}
 
+@layer components {
   .footer-link,
   .footer-icon {
     @apply text-muted-foreground hover:text-primary transition duration-200;
@@ -92,6 +94,6 @@ body {
   }
 
   .post-link {
-    @apply text-link hover:text-link/80 hover:underline; /* Ensure this class is defined correctly */
+    @apply text-link hover:text-link/80 hover:underline;
   }
 }

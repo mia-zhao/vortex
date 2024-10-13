@@ -1,4 +1,5 @@
 import BreadCrumb from "../breadcrumb";
+import "./blog.css";
 
 export default function Layout({
   children,
@@ -12,9 +13,9 @@ export default function Layout({
       <div className="my-8 ml">
         <BreadCrumb title={params.slug} />
       </div>
-      <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
+      <article className="blog max-w-3xl mx-auto p-6 rounded-lg shadow-md">
         {children}
-      </div>
+      </article>
     </div>
   );
 }
