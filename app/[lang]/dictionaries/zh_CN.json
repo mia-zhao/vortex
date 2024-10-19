@@ -1,0 +1,150 @@
+{
+  "header": {
+    "siteName": "Vortex",
+    "menu": [
+      { "id": "home", "name": "首页" },
+      {
+        "id": "features",
+        "name": "功能"
+      },
+      { "id": "pricing", "name": "价格" },
+      { "id": "blog", "name": "博客" }
+    ]
+  },
+  "hero": {
+    "headline": "欢迎来到您的非凡网站",
+    "description": "释放我们平台的全部潜力，将您的业务提升到新的高度。",
+    "primary_cta": "立即开始",
+    "secondary_cta": "了解更多"
+  },
+  "features": {
+    "title": "主要功能",
+    "featureList": [
+      {
+        "id": "open-source",
+        "name": "开源灵活性",
+        "description": "免费使用完全可定制的平台，激发您的创造力和创新。"
+      },
+      {
+        "id": "adaptive",
+        "name": "响应式设计",
+        "description": "专为在所有设备上提供出色的用户体验而设计，从手机到桌面。"
+      },
+      {
+        "id": "custom",
+        "name": "轻松定制",
+        "description": "无需编程知识即可轻松更改样式、布局和主题。"
+      },
+      {
+        "id": "seo",
+        "name": "SEO友好",
+        "description": "采用SEO最佳实践构建，提高可见性并吸引更多访问者到您的网站。"
+      },
+      {
+        "id": "quick",
+        "name": "快速部署",
+        "description": "通过一键集成顶级托管服务，无缝启动您的网站。"
+      },
+      {
+        "id": "global",
+        "name": "全球语言支持",
+        "description": "通过支持多种语言与全球受众联系，提高可访问性。"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "实惠透明的价格计划",
+    "description": "立即开始优化您的网站服务",
+    "plans": [
+      {
+        "id": "basic",
+        "name": "基础版",
+        "monthlyPrice": "¥0.00",
+        "description": "适合个人和小型企业",
+        "features": ["网站托管", "基本支持", "1 GB存储空间", "SSL证书"],
+        "buttonText": "免费开始",
+        "buttonVariant": "outline"
+      },
+      {
+        "id": "standard",
+        "name": "标准版",
+        "monthlyPrice": "¥349.00",
+        "description": "适合需求更多的成长型企业",
+        "features": [
+          "所有基础功能",
+          "自定义域名",
+          "5 GB存储空间",
+          "电子邮件支持",
+          "分析仪表板"
+        ],
+        "buttonText": "加入标准计划",
+        "buttonVariant": "default",
+        "mostPopular": true
+      },
+      {
+        "id": "premium",
+        "name": "高级版",
+        "monthlyPrice": "¥699.00",
+        "description": "为需要高级功能的大型组织设计",
+        "features": [
+          "所有标准功能",
+          "无限存储空间",
+          "优先支持",
+          "高级安全功能",
+          "自定义集成"
+        ],
+        "buttonText": "注册高级版",
+        "buttonVariant": "outline"
+      }
+    ]
+  },
+  "footer": {
+    "about": {
+      "title": "关于我们",
+      "description": "我们致力于提供卓越的服务和优质的产品。我们的使命是通过创新和诚信赋能我们的客户。"
+    },
+    "links": {
+      "title": "快速链接",
+      "links": [
+        {
+          "id": "home",
+          "name": "首页"
+        },
+        {
+          "id": "features",
+          "name": "功能"
+        },
+        {
+          "id": "pricing",
+          "name": "定价"
+        },
+        {
+          "id": "blog",
+          "name": "博客"
+        }
+      ]
+    },
+    "contact": {
+      "title": "联系",
+      "email": { "name": "电子邮件", "address": "info@yourcompany.com" },
+      "phone": { "name": "电话", "number": "(123) 456-7890" }
+    },
+    "social": {
+      "title": "关注我们",
+      "links": [
+        {
+          "id": "twitter",
+          "link": "https://twitter.com/vortex"
+        },
+        {
+          "id": "facebook",
+          "link": "https://facebook.com/vortex"
+        },
+        {
+          "id": "github",
+          "link": "https://github.com/company/vortex"
+        }
+      ]
+    }
+  }
+}
