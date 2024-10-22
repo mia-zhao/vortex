@@ -1,6 +1,8 @@
 import BreadCrumb from "../breadcrumb";
 import "./blog.css";
 
+export const runtime = "edge";
+
 export default function Layout({
   children,
   params,
