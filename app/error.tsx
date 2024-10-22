@@ -1,6 +1,5 @@
 "use client";
 
-import BackButton from "@/components/common/back-button";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

@@ -17,18 +17,12 @@ type ModalComponentType<T extends ModalProps> = (props: T) => JSX.Element;
 
 export default function useModal<T extends ModalProps>(
   ModalComponent: ModalComponentType<T>,
-  props?: any
+  props?: Omit<T, keyof ModalProps>
 ) {
   const [showModal, setShowModal] = useState(false);
 
   const renderModal = useCallback(() => {
-    return (
-      <ModalComponent
-        showModal={showModal}
-        setShowModal={setShowModal}
-        {...props}
-      />
-    );
+    return <ModalComponent {...(props as T)} />;
   }, [showModal, setShowModal, props]);
 
   return useMemo(
