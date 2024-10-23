@@ -1,0 +1,109 @@
+{
+  "header": {
+    "siteName": "Vortex",
+    "menu": {
+      "home": { "name": "首頁", "link": "/" },
+      "features": { "name": "功能", "link": "#features" },
+      "pricing": { "name": "價格", "link": "#pricing" },
+      "blog": { "name": "部落格", "link": "/blog" }
+    }
+  },
+  "hero": {
+    "headline": "歡迎來到您的非凡網站",
+    "description": "釋放我們平台的全部潛力，將您的業務提升到新的高度。",
+    "primary_cta": "立即開始",
+    "secondary_cta": "了解更多"
+  },
+  "features": {
+    "title": "主要功能",
+    "open-source": {
+      "name": "開源靈活性",
+      "description": "利用完全可自定義的平台，無需成本，激發您的創造力和創新。"
+    },
+    "adaptive": {
+      "name": "響應式設計",
+      "description": "專為在所有設備上提供卓越的用戶體驗而設計，從手機到桌面電腦。"
+    },
+    "custom": {
+      "name": "輕鬆自定義",
+      "description": "無需編程知識即可輕鬆更改樣式、佈局和主題。"
+    },
+    "seo": {
+      "name": "SEO友好",
+      "description": "採用SEO最佳實踐構建，提高可見度並吸引更多訪客到您的網站。"
+    },
+    "quick": {
+      "name": "快速部署",
+      "description": "通過一鍵集成頂級託管服務，無縫啟動您的網站。"
+    },
+    "global": {
+      "name": "全球語言支持",
+      "description": "通過支持多種語言，與全球受眾建立聯繫，提高可訪問性。"
+    }
+  },
+  "pricing": {
+    "title": "實惠透明的價格方案",
+    "description": "立即開始優化您的網站服務",
+
+    "basic": {
+      "id": "basic",
+      "name": "基礎版",
+      "monthlyPrice": "NT$0",
+      "description": "適合個人和小型企業",
+      "features": "網站託管, 基本支持, 1 GB 存儲空間, SSL 證書",
+      "buttonText": "免費開始",
+      "buttonVariant": "outline",
+      "mostPopular": "false"
+    },
+    "standard": {
+      "id": "standard",
+      "name": "標準版",
+      "monthlyPrice": "NT$1,500",
+      "description": "適合需求更多的成長型企業",
+      "features": "所有基礎版功能, 自定義域名, 5 GB 存儲空間, 電子郵件支持, 分析儀表板",
+      "buttonText": "加入標準方案",
+      "buttonVariant": "default",
+      "mostPopular": "true"
+    },
+    "premium": {
+      "id": "premium",
+      "name": "高級版",
+      "monthlyPrice": "NT$3,000",
+      "description": "為需要高級功能的大型組織設計",
+      "features": "所有標準版功能, 無限存儲空間, 優先支持, 高級安全功能, 自定義集成",
+      "buttonText": "註冊高級版",
+      "buttonVariant": "outline",
+      "mostPopular": "false"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "關於我們",
+      "description": "我們致力於提供卓越的服務和優質的產品。我們的使命是通過創新和誠信賦能我們的客戶。"
+    },
+    "links": {
+      "title": "快速連結",
+      "home": { "name": "首頁", "link": "/" },
+      "features": { "name": "功能", "link": "#features" },
+      "pricing": { "name": "定價", "link": "#pricing" },
+      "blog": { "name": "部落格", "link": "/blog" }
+    },
+    "contact": {
+      "title": "聯繫",
+      "email": {
+        "name": "電子郵件",
+        "address": "info@yourcompany.com"
+      },
+      "phone": {
+        "name": "電話",
+        "number": "(123) 456-7890"
+      }
+    },
+    "social": {
+      "title": "關注我們",
+      "twitter": "https://twitter.com/vortex",
+      "facebook": "https://facebook.com/vortex",
+      "github": "https://github.com/company/vortex"
+    }
+  }
+}

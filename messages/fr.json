@@ -1,0 +1,105 @@
+{
+  "header": {
+    "siteName": "Vortex",
+    "menu": {
+      "home": { "name": "Accueil", "link": "/" },
+      "features": { "name": "Fonctionnalités", "link": "#features" },
+      "pricing": { "name": "Tarification", "link": "#pricing" },
+      "blog": { "name": "Blog", "link": "/blog" }
+    }
+  },
+  "hero": {
+    "headline": "Bienvenue sur Votre Site Web Exceptionnel",
+    "description": "Débloquez tout le potentiel de notre plateforme et élevez votre entreprise à de nouveaux sommets.",
+    "primary_cta": "Commencez Maintenant",
+
+    "secondary_cta": "Découvrez Plus"
+  },
+  "features": {
+    "title": "Caractéristiques Clés",
+
+    "open-source": {
+      "name": "Flexibilité Open Source",
+      "description": "Profitez d'une plateforme entièrement personnalisable sans coût, alimentant votre créativité et votre innovation."
+    },
+    "adaptive": {
+      "name": "Design Réactif",
+      "description": "Conçu pour offrir une expérience utilisateur exceptionnelle sur tous les appareils, des mobiles aux ordinateurs de bureau."
+    },
+    "custom": {
+      "name": "Personnalisation Sans Effort",
+      "description": "Modifiez facilement les styles, les mises en page et les thèmes sans aucune connaissance en codage."
+    },
+    "seo": {
+      "name": "Optimisé pour le SEO",
+      "description": "Construit avec les meilleures pratiques SEO pour améliorer la visibilité et attirer plus de visiteurs sur votre site."
+    },
+    "quick": {
+      "name": "Déploiement Rapide",
+      "description": "Lancez votre site web sans effort avec une intégration en un clic aux meilleurs services d'hébergement."
+    },
+    "global": {
+      "name": "Support Linguistique Global",
+      "description": "Connectez-vous avec un public mondial grâce au support de plusieurs langues, améliorant l'accessibilité."
+    }
+  },
+  "pricing": {
+    "title": "Plans de Tarification Abordables et Transparents",
+    "description": "Commencez à optimiser vos services web dès aujourd'hui",
+
+    "basic": {
+      "id": "basic",
+      "name": "Basique",
+      "monthlyPrice": "0,00 €",
+      "description": "Idéal pour les particuliers et les petites entreprises",
+      "features": "Hébergement de Site Web, Support de Base, 1 Go de Stockage, Certificat SSL",
+      "buttonText": "Commencez Gratuitement",
+      "buttonVariant": "outline",
+      "mostPopular": "false"
+    },
+    "standard": {
+      "id": "standard",
+      "name": "Standard",
+      "monthlyPrice": "49,00 €",
+      "description": "Parfait pour les entreprises en croissance avec des besoins accrus",
+      "features": "Toutes les Fonctionnalités de Base, Nom de Domaine Personnalisé, 5 Go de Stockage, Support par Email, Tableau de Bord d'Analyse",
+      "buttonText": "Rejoignez le Plan Standard",
+      "buttonVariant": "default",
+      "mostPopular": "true"
+    },
+    "premium": {
+      "id": "premium",
+      "name": "Premium",
+      "monthlyPrice": "99,00 €",
+      "description": "Conçu pour les grandes organisations nécessitant des fonctionnalités avancées",
+      "features": "Toutes les Fonctionnalités Standard, Stockage Illimité, Support Prioritaire, Fonctionnalités de Sécurité Avancées, Intégrations Personnalisées",
+      "buttonText": "Inscrivez-vous pour Premium",
+      "buttonVariant": "outline",
+      "mostPopular": "false"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "À Propos de Nous",
+      "description": "Nous sommes dédiés à fournir un service exceptionnel et des produits de qualité. Notre mission est d'autonomiser nos clients grâce à l'innovation et à l'intégrité."
+    },
+    "links": {
+      "title": "Liens Rapides",
+      "home": { "name": "Accueil", "link": "/" },
+      "features": { "name": "Fonctionnalités", "link": "#features" },
+      "pricing": { "name": "Tarification", "link": "#pricing" },
+      "blog": { "name": "Blog", "link": "/blog" }
+    },
+    "contact": {
+      "title": "Nous Contacter",
+      "email": { "name": "Email", "address": "info@votreentreprise.com" },
+      "phone": { "name": "Téléphone", "number": "(123) 456-7890" }
+    },
+    "social": {
+      "title": "Suivez-nous",
+      "twitter": "https://twitter.com/vortex",
+      "facebook": "https://facebook.com/vortex",
+      "github": "https://github.com/company/vortex"
+    }
+  }
+}

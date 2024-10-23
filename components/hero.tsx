@@ -1,31 +1,29 @@
-"use client";
-
-import { useLocale } from "@/context/locale-context";
+import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 
 export default function Hero() {
-  const { hero } = useLocale();
+  const hero = useTranslations("hero");
 
   return (
     <section className="bg-accent w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-accent-foreground">
-            {hero.headline}
+            {hero("headline")}
           </h1>
           <p className="mt-3 max-w-md mx-auto text-base sm:text-lg md:mt-5 md:text-xl text-secondary-foreground">
-            {hero.description}
+            {hero("description")}
           </p>
           <div className="mt-5 max-w-md mx-auto flex flex-col sm:flex-row sm:justify-center md:mt-8">
             <Button size="lg" className="w-1/2 mx-auto rounded-md shadow">
-              {hero.primary_cta}
+              {hero("primary_cta")}
             </Button>
             <Button
               variant="outline"
               size="lg"
               className="mt-3 md:ml-6 lg:ml-12 sm:mt-0 w-1/2 mx-auto"
             >
-              {hero.secondary_cta}
+              {hero("secondary_cta")}
             </Button>
           </div>
         </div>

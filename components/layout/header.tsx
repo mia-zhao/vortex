@@ -1,12 +1,17 @@
-"use client";
-
+import { useTranslations } from "next-intl";
 import { ModeToggle } from "../theme/theme-toggle";
 import Logo from "../../public/logo.svg";
-import { useLocale } from "@/context/locale-context";
 import LanguageSelector from "../locale/language-selector";
+import { Link } from "@/i18n/routing";
 
 export default function Header() {
-  const { header } = useLocale();
+  const header = useTranslations("header");
+  const keys: Array<keyof IntlMessages["header"]["menu"]> = [
+    "home",
+    "features",
+    "pricing",
+    "blog",
+  ];
 
   return (
     <header className="shadow-sm">
@@ -16,20 +21,24 @@ export default function Header() {
             alt="Logo"
             className="mr-2 w-6 h-6 stroke-current text-primary"
           />
-          <span className="font-bold text-2xl">{header.siteName}</span>
+          <span className="font-bold text-2xl">{header("siteName")}</span>
         </div>
         <nav className="flex items-center">
           <ul className="flex flex-wrap items-center justify-center space-x-6">
-            {header.menu.map(({ id, name }) => (
-              <li key={id}>
-                <a
-                  href={
-                    id === "home" ? "/" : id === "blog" ? "/blog" : `/#${id}`
-                  }
-                  className="header-link"
-                >
-                  {name}
-                </a>
+            {keys.map((key) => (
+              <li key={key.toString()}>
+                {!header(`menu.${key}.link`).startsWith("#") ? (
+                  <Link
+                    href={header(`menu.${key}.link`)}
+                    className="header-link"
+                  >
+                    {header(`menu.${key}.name`)}
+                  </Link>
+                ) : (
+                  <a href={header(`menu.${key}.link`)} className="header-link">
+                    {header(`menu.${key}.name`)}
+                  </a>
+                )}
               </li>
             ))}
             <li>

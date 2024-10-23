@@ -17,7 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Check, ChevronsUpDown } from "lucide-react";
-import i18nConfig from "@/i18nConfig";
+import i18nConfig from "@/i18n/config";
 
 const { locales } = i18nConfig;
 

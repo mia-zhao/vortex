@@ -1,73 +1,96 @@
-"use client";
-
-import { useLocale } from "@/context/locale-context";
-import React from "react";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
-  const { footer } = useLocale();
+  const footer = useTranslations("footer");
+  const linkKeys: Array<keyof IntlMessages["header"]["menu"]> = [
+    "home",
+    "features",
+    "pricing",
+    "blog",
+  ];
+
+  const socialKeys: Array<keyof IntlMessages["footer"]["social"]> = [
+    "twitter",
+    "facebook",
+    "github",
+  ];
 
   return (
     <footer className="bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">{footer.about.title}</h3>
-            <p className="text-sm">{footer.about.description}</p>
+            <h3 className="text-lg font-semibold mb-4">
+              {footer("about.title")}
+            </h3>
+            <p className="text-sm">{footer("about.description")}</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">{footer.links.title}</h3>
+            <h3 className="text-lg font-semibold mb-4">
+              {footer("links.title")}
+            </h3>
             <ul className="space-y-2 text-sm">
-              {footer.links.links.map(({ id, name }) => (
-                <li key={id}>
-                  <a
-                    href={
-                      id === "home" ? "/" : id === "blog" ? "/blog" : `/#${id}`
-                    }
-                    className="footer-link"
-                  >
-                    {name}
-                  </a>
+              {linkKeys.map((key) => (
+                <li key={key}>
+                  {!footer(`links.${key}.link`).startsWith("#") ? (
+                    <Link
+                      href={footer(`links.${key}.link`)}
+                      className="footer-link"
+                    >
+                      {footer(`links.${key}.name`)}
+                    </Link>
+                  ) : (
+                    <a
+                      href={footer(`links.${key}.link`)}
+                      className="footer-link"
+                    >
+                      {footer(`links.${key}.name`)}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">
-              {footer.contact.title}
+              {footer("contact.title")}
             </h3>
             <p className="text-muted-foreground text-sm">
-              {footer.contact.email.name}:{" "}
+              {footer("contact.email.name")}:{" "}
               <a
-                href={`mailto:${footer.contact.email.address}`}
+                href={`mailto:${footer("contact.email.address")}`}
                 className="hover:underline"
               >
-                {footer.contact.email.address}
+                {footer("contact.email.address")}
               </a>
             </p>
             <p className="text-muted-foreground text-sm">
-              {footer.contact.phone.name}:{" "}
+              {footer("contact.phone.name")}:{" "}
               <a
-                href={`tel:+${footer.contact.phone.number}`}
+                href={`tel:+${footer("contact.phone.number")}`}
                 className="hover:underline"
               >
                 {/* TODO: format phone number by country */}
-                {footer.contact.phone.number}
+                {footer("contact.phone.number")}
               </a>
             </p>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">
-              {footer.social.title}
+              {footer("social.title")}
             </h3>
             <div className="flex space-x-4">
-              {footer.social.links.map(({ id, link }) => (
+              {socialKeys.map((key) => (
                 <a
-                  key={id}
-                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={key}
+                  href={`${footer(`social.${key}`)}`}
                   className="footer-icon"
-                  aria-label={id.charAt(0).toUpperCase() + id.slice(1)}
+                  aria-label={key.charAt(0).toUpperCase() + key.slice(1)}
                 >
-                  {id === "facebook" && (
+                  {key === "facebook" && (
                     <svg
                       className="h-6 w-6"
                       fill="currentColor"
@@ -81,7 +104,7 @@ export default function Footer() {
                       />
                     </svg>
                   )}
-                  {id === "twitter" && (
+                  {key === "twitter" && (
                     <svg
                       className="h-6 w-6"
                       fill="currentColor"
@@ -91,7 +114,7 @@ export default function Footer() {
                       <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                     </svg>
                   )}
-                  {id === "github" && (
+                  {key === "github" && (
                     <svg
                       className="h-6 w-6"
                       fill="currentColor"

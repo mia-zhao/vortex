@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import i18nConfig from "@/i18nConfig";
+import i18nConfig from "@/i18n/config";
 
 export const runtime = "edge";
 
@@ -25,31 +27,39 @@ export async function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function Layout({
+export default async function Layout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: string };
+  params: { locale: string };
 }>) {
+  const messages = await getMessages();
+
+  // if (!routing.locales.includes(locale as any)) {
+  //   notFound()
+  // }
+
   return (
     // Set suppressHydrationWarning to true to prevent warnings about extra attributes
     // being rendered from the server. This is expected behavior since the theme
     // configuration is handled on the client side.
-    <html lang={params.lang} suppressHydrationWarning={true}>
+    <html lang={params.locale} suppressHydrationWarning={true}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
-            {children}
-          </div>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
+              {children}
+            </div>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
