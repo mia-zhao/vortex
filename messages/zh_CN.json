@@ -104,5 +104,18 @@
       "facebook": "https://facebook.com/vortex",
       "github": "https://github.com/company/vortex"
     }
+  },
+
+  "CookieConsent": {
+    "title": "Cookie 设置",
+    "description": "我们使用 Cookie 来改善您的浏览体验并分析我们的流量。请选择是否同意我们使用 Cookie。",
+    "decline": "拒绝",
+    "accept": "接受"
+  },
+  "MetaData": {
+    "title": "Vortex | Next.js 登陆页面模板",
+    "description": "Vortex 提供响应式设计、无缝的用户界面自定义、深色/浅色模式切换、多语言支持，以及轻松部署到 Cloudflare。",
+    "keywords": "Next.js, React, Tailwind CSS, 登陆页面, Next.js 模板, i18n, SEO, Cloudflare",
+    "opengraph-description": "现代、响应式且 SEO 友好的 Next.js 登陆页面模板，支持多语言。"
   }
 }

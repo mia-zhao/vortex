@@ -98,5 +98,17 @@
       "facebook": "https://facebook.com/vortex",
       "github": "https://github.com/company/vortex"
     }
+  },
+  "CookieConsent": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to enhance your browsing experience and analyze our traffic. Please choose whether you consent to our use of cookies.",
+    "decline": "Decline",
+    "accept": "Accept"
+  },
+  "MetaData": {
+    "title": "Vortex | Next.js Landing Page Template",
+    "description": "Vortex offers responsive designs, seamless UI customization, dark/light mode toggle, multilingual support, and effortless deployment to Cloudflare.",
+    "keywords": "Next.js,React,Tailwind CSS,Landing Page,Next.js Template,i18n,SEO,Cloudflare",
+    "opengraph-description": "Modern, responsive, and SEO-friendly Next.js landing page template with multilingual support."
   }
 }

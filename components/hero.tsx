@@ -21,7 +21,7 @@ export default function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="mt-3 md:ml-6 lg:ml-12 sm:mt-0 w-1/2 mx-auto"
+              className="mt-3 w-1/2 mx-auto sm:mt-0 md:ml-6 lg:ml-12"
             >
               {hero("secondary_cta")}
             </Button>

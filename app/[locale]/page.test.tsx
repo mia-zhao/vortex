@@ -5,8 +5,6 @@ import { MemoryRouter } from "react-router-dom";
 import LocalePage from "./page";
 import * as en from "../../messages/en.json";
 
-jest.mock("../../public/logo.svg", () => "mocked-logo.svg");
-
 jest.mock("next-intl", () => {
   const originalModule = jest.requireActual("next-intl");
   return {
@@ -17,6 +15,18 @@ jest.mock("next-intl", () => {
         messages: en,
         namespace,
       });
+    }),
+  };
+});
+
+jest.mock("next-intl/navigation", () => {
+  const originalModule = jest.requireActual("next-intl/navigation");
+  const originalCreateNavigationReturn = originalModule.createNavigation();
+  return {
+    ...originalModule,
+    createNavigation: () => ({
+      ...originalCreateNavigationReturn,
+      useRouter: jest.fn(),
     }),
   };
 });

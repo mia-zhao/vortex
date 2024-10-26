@@ -98,5 +98,17 @@
       "facebook": "https://facebook.com/vortex",
       "github": "https://github.com/company/vortex"
     }
+  },
+  "CookieConsent": {
+    "title": "Cookie-Einstellungen",
+    "description": "Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern und unseren Datenverkehr zu analysieren. Bitte wählen Sie, ob Sie der Verwendung von Cookies zustimmen.",
+    "decline": "Ablehnen",
+    "accept": "Akzeptieren"
+  },
+  "MetaData": {
+    "title": "Vortex | Next.js Landing Page Vorlage",
+    "description": "Vortex bietet responsive Designs, nahtlose UI-Anpassung, Umschaltung zwischen Dunkel-/Hellmodus, mehrsprachige Unterstützung und mühelose Bereitstellung auf Cloudflare.",
+    "keywords": "Next.js,React,Tailwind CSS,Landing Page,Next.js Vorlage,i18n,SEO,Cloudflare",
+    "opengraph-description": "Moderne, responsive und SEO-freundliche Next.js Landing Page Vorlage mit mehrsprachiger Unterstützung."
   }
 }

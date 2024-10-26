@@ -101,5 +101,18 @@
       "facebook": "https://facebook.com/vortex",
       "github": "https://github.com/company/vortex"
     }
+  },
+
+  "CookieConsent": {
+    "title": "Paramètres des Cookies",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. Veuillez choisir si vous consentez à notre utilisation des cookies.",
+    "decline": "Refuser",
+    "accept": "Accepter"
+  },
+  "MetaData": {
+    "title": "Vortex | Modèle de Page de Destination Next.js",
+    "description": "Vortex propose des designs responsives, une personnalisation de l'interface utilisateur sans couture, un basculement entre le mode sombre et clair, un support multilingue et un déploiement sans effort sur Cloudflare.",
+    "keywords": "Next.js,React,Tailwind CSS,Page de Destination,Modèle Next.js,i18n,SEO,Cloudflare",
+    "opengraph-description": "Modèle de page de destination Next.js moderne, responsive et optimisé pour le SEO avec un support multilingue."
   }
 }

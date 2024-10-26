@@ -97,3 +97,9 @@ body {
     @apply text-link hover:text-link/80 hover:underline;
   }
 }
+
+.dark {
+  .logo {
+    filter: invert(1); /* Invert colors for dark mode */
+  }
+}
