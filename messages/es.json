@@ -114,5 +114,16 @@
     "description": "Vortex ofrece diseños responsivos, personalización de interfaz de usuario sin problemas, cambio de modo oscuro/claro, soporte multilingüe y despliegue sin esfuerzo en Cloudflare.",
     "keywords": "Next.js,React,Tailwind CSS,Página de Aterrizaje,Plantilla Next.js,i18n,SEO,Cloudflare",
     "opengraph-description": "Plantilla de página de aterrizaje Next.js moderna, responsiva y optimizada para SEO con soporte multilingüe."
+  },
+  "NotFound": {
+    "title": "404 - Página No Encontrada",
+    "description": "¡Ups! La página que buscas no existe.",
+    "backHome": "Regresar a Inicio"
+  },
+  "Error": {
+    "title": "¡Ups! Algo salió mal",
+    "description": "Pedimos disculpas por las molestias.",
+    "tryAgain": "Intenta de nuevo",
+    "backHome": "Regresar a Inicio"
   }
 }

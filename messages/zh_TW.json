@@ -118,5 +118,16 @@
     "description": "Vortex 提供響應式設計、無縫的用戶界面自定義、深色/淺色模式切換、多語言支持，以及輕鬆部署到 Cloudflare。",
     "keywords": "Next.js, React, Tailwind CSS, 登陸頁面, Next.js 模板, i18n, SEO, Cloudflare",
     "opengraph-description": "現代、響應式且 SEO 友好的 Next.js 登陸頁面模板，支持多語言。"
+  },
+  "NotFound": {
+    "title": "404 - 找不到頁面",
+    "description": "抱歉！您要找的頁面不存在。",
+    "backHome": "返回首頁"
+  },
+  "Error": {
+    "title": "抱歉！發生了問題",
+    "description": "我們對造成的不便表示歉意。",
+    "tryAgain": "再試一次",
+    "backHome": "返回首頁"
   }
 }

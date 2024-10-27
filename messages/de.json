@@ -110,5 +110,16 @@
     "description": "Vortex bietet responsive Designs, nahtlose UI-Anpassung, Umschaltung zwischen Dunkel-/Hellmodus, mehrsprachige Unterstützung und mühelose Bereitstellung auf Cloudflare.",
     "keywords": "Next.js,React,Tailwind CSS,Landing Page,Next.js Vorlage,i18n,SEO,Cloudflare",
     "opengraph-description": "Moderne, responsive und SEO-freundliche Next.js Landing Page Vorlage mit mehrsprachiger Unterstützung."
+  },
+  "NotFound": {
+    "title": "404 - Seite nicht gefunden",
+    "description": "Oops! Die Seite, die Sie suchen, existiert nicht.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "Error": {
+    "title": "Oops! Etwas ist schiefgelaufen",
+    "description": "Wir entschuldigen uns für die Unannehmlichkeiten.",
+    "tryAgain": "Erneut versuchen",
+    "backHome": "Zurück zur Startseite"
   }
 }

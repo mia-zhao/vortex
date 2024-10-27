@@ -114,5 +114,16 @@
     "description": "Vortex propose des designs responsives, une personnalisation de l'interface utilisateur sans couture, un basculement entre le mode sombre et clair, un support multilingue et un déploiement sans effort sur Cloudflare.",
     "keywords": "Next.js,React,Tailwind CSS,Page de Destination,Modèle Next.js,i18n,SEO,Cloudflare",
     "opengraph-description": "Modèle de page de destination Next.js moderne, responsive et optimisé pour le SEO avec un support multilingue."
+  },
+  "NotFound": {
+    "title": "404 - Page Non Trouvée",
+    "description": "Oups ! La page que vous recherchez n'existe pas.",
+    "backHome": "Retour à l'accueil"
+  },
+  "Error": {
+    "title": "Oups ! Quelque chose a mal tourné",
+    "description": "Nous nous excusons pour le désagrément.",
+    "tryAgain": "Réessayer",
+    "backHome": "Retour à l'accueil"
   }
 }

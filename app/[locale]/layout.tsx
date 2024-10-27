@@ -1,22 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
-import { ThemeProvider } from "@/components/theme/theme-provider";
+import { getTranslations } from "next-intl/server";
 import i18nConfig from "@/i18n/config";
+import BaseLayout from "@/components/layout/base-layout";
 
 export const runtime = "edge";
-
-const geistSans = localFont({
-  src: "../fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export async function generateMetadata({
   params: { locale },
@@ -64,6 +51,10 @@ export async function generateMetadata({
   };
 }
 
+export async function generateStaticParams() {
+  return i18nConfig.locales.map((locale) => ({ lang: locale }));
+}
+
 export default async function Layout({
   children,
   params,
@@ -71,29 +62,11 @@ export default async function Layout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const messages = await getMessages();
-
   return (
-    // Set suppressHydrationWarning to true to prevent warnings about extra attributes
-    // being rendered from the server. This is expected behavior since the theme
-    // configuration is handled on the client side.
-    <html lang={params.locale} suppressHydrationWarning={true}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="relative min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
-              {children}
-            </div>
-          </ThemeProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <BaseLayout locale={params.locale}>
+      <div className="relative min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
+        {children}
+      </div>
+    </BaseLayout>
   );
 }
