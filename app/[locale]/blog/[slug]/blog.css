@@ -24,7 +24,7 @@
   }
 
   p {
-    @apply mb-4 text-foreground;
+    @apply my-2 text-foreground;
   }
 
   ul {
@@ -36,6 +36,34 @@
 
     ul {
       @apply list-disc list-inside ml-4 text-foreground;
+
+      li {
+        @apply mb-2 text-foreground;
+      }
+
+      ul {
+        @apply list-disc list-inside ml-4 text-foreground;
+      }
+
+      ol {
+        @apply list-decimal list-inside ml-4 text-foreground;
+      }
+    }
+
+    ol {
+      @apply list-decimal list-inside mb-4 text-foreground;
+
+      li {
+        @apply mb-2 text-foreground;
+      }
+
+      ul {
+        @apply list-disc list-inside ml-4 text-foreground;
+      }
+
+      ol {
+        @apply list-decimal list-inside ml-4 text-foreground;
+      }
     }
   }
 
@@ -46,8 +74,36 @@
       @apply mb-2 text-foreground;
     }
 
+    ul {
+      @apply list-disc list-inside ml-4 text-foreground;
+
+      li {
+        @apply mb-2 text-foreground;
+      }
+
+      ul {
+        @apply list-disc list-inside ml-4 text-foreground;
+      }
+
+      ol {
+        @apply list-decimal list-inside ml-4 text-foreground;
+      }
+    }
+
     ol {
-      @apply list-decimal list-inside ml-4 text-foreground;
+      @apply list-decimal list-inside mb-4 text-foreground;
+
+      li {
+        @apply mb-2 text-foreground;
+      }
+
+      ul {
+        @apply list-disc list-inside ml-4 text-foreground;
+      }
+
+      ol {
+        @apply list-decimal list-inside ml-4 text-foreground;
+      }
     }
   }
 
@@ -57,5 +113,13 @@
 
   img {
     @apply w-1/2 h-auto my-6 rounded-lg shadow-md mx-auto block bg-white;
+  }
+
+  .author {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .update-time {
+    @apply text-sm text-muted-foreground;
   }
 }

@@ -7,6 +7,15 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const withMDX = NextMdx({
   extension: /\.mdx?$/,
+  options: {
+    webpack(config) {
+      config.module.rules.push({
+        test: /\.mdx$/,
+        use: "raw-loader",
+      });
+      return config;
+    },
+  },
 });
 
 const nextConfig = withNextIntl(
