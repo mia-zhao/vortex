@@ -23,7 +23,7 @@ export default function useModal<T extends ModalProps>(
 
   const renderModal = useCallback(() => {
     return <ModalComponent {...(props as T)} />;
-  }, [showModal, setShowModal, props]);
+  }, [ModalComponent, props]);
 
   return useMemo(
     () => ({ Modal: renderModal, setShowModal, showModal }),
