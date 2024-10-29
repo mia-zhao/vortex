@@ -1,16 +1,13 @@
-import { compileMDX } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import {
   blogRegistry,
   type BlogSlug,
-  BlogFrontmatter,
+  getBlogPost,
 } from "@/content/blog/blog-registry";
 import BreadCrumb from "../breadcrumb";
 import Blog from "./blog";
 import { Locale } from "@/i18n/routing";
 import i18nConfig from "@/i18n/config";
-
-export const runtime = "edge";
 
 export default async function BlogPost({
   params,
@@ -31,10 +28,7 @@ export default async function BlogPost({
     notFound();
   }
 
-  const { content, frontmatter } = await compileMDX<BlogFrontmatter>({
-    source: rawContent,
-    options: { parseFrontmatter: true },
-  });
+  const { frontmatter, content } = await getBlogPost(rawContent);
 
   return (
     <>
@@ -46,7 +40,7 @@ export default async function BlogPost({
   );
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return Object.keys(blogRegistry).map((slug) => ({
     slug,
   }));

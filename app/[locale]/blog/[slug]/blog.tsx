@@ -1,13 +1,14 @@
-import { BlogFrontmatter } from "@/content/blog/blog-registry";
 import React from "react";
+import { BlogFrontmatter } from "@/content/blog/blog-registry";
 import { useFormatter, useTranslations } from "next-intl";
+import ReactMarkdown from "react-markdown";
 
 export default function Blog({
   frontmatter,
   content,
 }: {
   frontmatter: BlogFrontmatter;
-  content: React.ReactNode;
+  content: string;
 }) {
   const t = useTranslations("blog");
   const formatter = useFormatter();
@@ -23,7 +24,7 @@ export default function Blog({
           date: formatter.dateTime(new Date(frontmatter.lastmod)),
         })}
       </div>
-      {content}
+      <ReactMarkdown>{content}</ReactMarkdown>
     </article>
   );
 }

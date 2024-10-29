@@ -1,6 +1,6 @@
-import { compileMDX } from "next-mdx-remote/rsc";
 import { Locale } from "@/i18n/routing";
 import i18nConfig from "@/i18n/config";
+import matter from "gray-matter";
 
 const BLOG_SLUGS = [
   "how-to-use-markdown-in-next-js",
@@ -48,10 +48,7 @@ export async function getBlogPosts(locale: Locale = i18nConfig.defaultLocale) {
         continue;
       }
 
-      const { frontmatter } = await compileMDX<BlogFrontmatter>({
-        source: rawContent,
-        options: { parseFrontmatter: true },
-      });
+      const { frontmatter } = await compileMDX(rawContent);
 
       posts.push({ ...frontmatter, slug });
     } catch (e) {
@@ -62,4 +59,20 @@ export async function getBlogPosts(locale: Locale = i18nConfig.defaultLocale) {
   return posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
+}
+
+export async function getBlogPost(
+  source: string
+): Promise<{ frontmatter: BlogFrontmatter; content: string }> {
+  const { content: code, frontmatter } = await compileMDX(source);
+
+  return { frontmatter, content: code };
+}
+
+async function compileMDX(
+  source: string
+): Promise<{ frontmatter: BlogFrontmatter; content: string }> {
+  const { content, data } = matter(source);
+
+  return { frontmatter: data as BlogFrontmatter, content };
 }

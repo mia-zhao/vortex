@@ -13,6 +13,8 @@ import SearchForm from "@/components/blog/search-form";
 import CategoriesCard from "@/components/blog/categories-card";
 import { getTranslations, getFormatter } from "next-intl/server";
 
+export const runtime = "edge";
+
 export default async function BlogPage({
   params,
   searchParams,
