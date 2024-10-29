@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
+import { Link } from "@/i18n/routing";
 
 export default function Hero() {
   const hero = useTranslations("hero");
@@ -16,14 +17,16 @@ export default function Hero() {
           </p>
           <div className="mt-5 max-w-md mx-auto flex flex-col sm:flex-row sm:justify-center md:mt-8">
             <Button size="lg" className="w-1/2 mx-auto rounded-md shadow">
-              {hero("primary_cta")}
+              <Link href="https://github.com/mia-zhao/vortex">
+                {hero("primary_cta")}
+              </Link>
             </Button>
             <Button
               variant="outline"
               size="lg"
               className="mt-3 w-1/2 mx-auto sm:mt-0 md:ml-6 lg:ml-12"
             >
-              {hero("secondary_cta")}
+              <Link href="/blog">{hero("secondary_cta")}</Link>
             </Button>
           </div>
         </div>

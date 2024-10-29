@@ -29,9 +29,9 @@
       "name": "Responsive Design",
       "description": "Crafted to provide an outstanding user experience across all devices, from mobile to desktop."
     },
-    "custom": {
-      "name": "Effortless Customization",
-      "description": "Modify styles, layouts, and themes easily without any coding knowledge."
+    "markdown": {
+      "name": "Markdown Integration",
+      "description": "Easily create and format content using Markdown, enhancing your writing experience."
     },
     "seo": {
       "name": "SEO Friendly",
@@ -99,9 +99,9 @@
     },
     "social": {
       "title": "Follow Us",
-      "twitter": "https://twitter.com/vortex",
-      "facebook": "https://facebook.com/vortex",
-      "github": "https://github.com/company/vortex"
+      "twitter": "https://twitter.com/#",
+      "facebook": "https://facebook.com/#",
+      "github": "https://github.com/mia-zhao/vortex"
     },
     "message": "All rights reserved."
   },

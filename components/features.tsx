@@ -1,11 +1,18 @@
 import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Smartphone, Palette, Search, Rocket, Globe } from "lucide-react";
+import {
+  Code,
+  Smartphone,
+  Heading1,
+  Search,
+  Rocket,
+  Globe,
+} from "lucide-react";
 
 const iconMap: { [key: string]: JSX.Element } = {
   "open-source": <Code className="h-12 w-12 mb-4 text-primary" />,
   adaptive: <Smartphone className="h-12 w-12 mb-4 text-primary" />,
-  custom: <Palette className="h-12 w-12 mb-4 text-primary" />,
+  markdown: <Heading1 className="h-12 w-12 mb-4 text-primary" />,
   seo: <Search className="h-12 w-12 mb-4 text-primary" />,
   quick: <Rocket className="h-12 w-12 mb-4 text-primary" />,
   global: <Globe className="h-12 w-12 mb-4 text-primary" />,
@@ -14,7 +21,7 @@ const iconMap: { [key: string]: JSX.Element } = {
 type FeatureKey = Array<
   Extract<
     keyof IntlMessages["features"],
-    "open-source" | "adaptive" | "custom" | "seo" | "quick" | "global"
+    "open-source" | "adaptive" | "markdown" | "seo" | "quick" | "global"
   >
 >;
 

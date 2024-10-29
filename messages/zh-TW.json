@@ -29,9 +29,9 @@
       "name": "響應式設計",
       "description": "專為在所有設備上提供卓越的用戶體驗而設計，從手機到桌面電腦。"
     },
-    "custom": {
-      "name": "輕鬆自定義",
-      "description": "無需編程知識即可輕鬆更改樣式、佈局和主題。"
+    "markdown": {
+      "name": "Markdown 整合",
+      "description": "輕鬆使用 Markdown 創建和格式化內容，提升您的寫作體驗。"
     },
     "seo": {
       "name": "SEO友好",
@@ -106,9 +106,9 @@
     },
     "social": {
       "title": "關注我們",
-      "twitter": "https://twitter.com/vortex",
-      "facebook": "https://facebook.com/vortex",
-      "github": "https://github.com/company/vortex"
+      "twitter": "https://twitter.com/#",
+      "facebook": "https://facebook.com/#",
+      "github": "https://github.com/mia-zhao/vortex"
     },
     "message": "所有權利保留。"
   },

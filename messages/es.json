@@ -30,9 +30,9 @@
       "name": "Diseño Responsivo",
       "description": "Diseñado para proporcionar una experiencia de usuario excepcional en todos los dispositivos, desde móviles hasta computadoras de escritorio."
     },
-    "custom": {
-      "name": "Personalización Sin Esfuerzo",
-      "description": "Modifica estilos, diseños y temas fácilmente sin necesidad de conocimientos de programación."
+    "markdown": {
+      "name": "Integración de Markdown",
+      "description": "Crea y formatea contenido fácilmente utilizando Markdown, mejorando tu experiencia de escritura."
     },
     "seo": {
       "name": "Amigable con SEO",
@@ -103,9 +103,9 @@
     },
     "social": {
       "title": "Síguenos",
-      "twitter": "https://twitter.com/vortex",
-      "facebook": "https://facebook.com/vortex",
-      "github": "https://github.com/company/vortex"
+      "twitter": "https://twitter.com/#",
+      "facebook": "https://facebook.com/#",
+      "github": "https://github.com/mia-zhao/vortex"
     },
     "message": "Todos los derechos reservados."
   },

@@ -30,9 +30,9 @@
       "name": "响应式设计",
       "description": "专为在所有设备上提供出色的用户体验而设计，从手机到桌面。"
     },
-    "custom": {
-      "name": "轻松定制",
-      "description": "无需编程知识即可轻松更改样式、布局和主题。"
+    "markdown": {
+      "name": "Markdown 集成",
+      "description": "轻松使用 Markdown 创建和格式化内容，提升您的写作体验。"
     },
     "seo": {
       "name": "SEO友好",
@@ -106,9 +106,9 @@
     },
     "social": {
       "title": "关注我们",
-      "twitter": "https://twitter.com/vortex",
-      "facebook": "https://facebook.com/vortex",
-      "github": "https://github.com/company/vortex"
+      "twitter": "https://twitter.com/#",
+      "facebook": "https://facebook.com/#",
+      "github": "https://github.com/mia-zhao/vortex"
     },
     "message": "所有权利保留。"
   },

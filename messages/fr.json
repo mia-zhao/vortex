@@ -31,9 +31,9 @@
       "name": "Design Réactif",
       "description": "Conçu pour offrir une expérience utilisateur exceptionnelle sur tous les appareils, des mobiles aux ordinateurs de bureau."
     },
-    "custom": {
-      "name": "Personnalisation Sans Effort",
-      "description": "Modifiez facilement les styles, les mises en page et les thèmes sans aucune connaissance en codage."
+    "markdown": {
+      "name": "Intégration Markdown",
+      "description": "Créez et formatez facilement du contenu en utilisant Markdown, ce qui améliore votre expérience d'écriture."
     },
     "seo": {
       "name": "Optimisé pour le SEO",
@@ -97,14 +97,14 @@
     },
     "contact": {
       "title": "Nous Contacter",
-      "email": { "name": "Email", "address": "info@votreentreprise.com" },
+      "email": { "name": "Email", "address": "info@yourcompany.com" },
       "phone": { "name": "Téléphone", "number": "(123) 456-7890" }
     },
     "social": {
       "title": "Suivez-nous",
-      "twitter": "https://twitter.com/vortex",
-      "facebook": "https://facebook.com/vortex",
-      "github": "https://github.com/company/vortex"
+      "twitter": "https://twitter.com/#",
+      "facebook": "https://facebook.com/#",
+      "github": "https://github.com/mia-zhao/vortex"
     },
     "message": "Tous les droits sont réservés."
   },
