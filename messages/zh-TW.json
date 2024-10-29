@@ -1,4 +1,9 @@
 {
+  "modeToggle": {
+    "light": "淺色",
+    "dark": "深色",
+    "system": "系統"
+  },
   "header": {
     "siteName": "Vortex",
     "menu": {
@@ -104,9 +109,9 @@
       "twitter": "https://twitter.com/vortex",
       "facebook": "https://facebook.com/vortex",
       "github": "https://github.com/company/vortex"
-    }
+    },
+    "message": "所有權利保留。"
   },
-
   "CookieConsent": {
     "title": "Cookie 設置",
     "description": "我們使用 Cookie 來改善您的瀏覽體驗並分析我們的流量。請選擇是否同意我們使用 Cookie。",

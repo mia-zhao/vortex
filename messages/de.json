@@ -1,4 +1,9 @@
 {
+  "modeToggle": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
   "header": {
     "siteName": "Vortex",
     "menu": {
@@ -97,7 +102,8 @@
       "twitter": "https://twitter.com/vortex",
       "facebook": "https://facebook.com/vortex",
       "github": "https://github.com/company/vortex"
-    }
+    },
+    "message": "Alle Rechte vorbehalten."
   },
   "CookieConsent": {
     "title": "Cookie-Einstellungen",

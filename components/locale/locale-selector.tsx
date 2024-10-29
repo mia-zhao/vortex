@@ -37,10 +37,29 @@ export default function LocaleSelector() {
       <SelectContent align="end">
         {locales.map((locale) => (
           <SelectItem value={locale} key={locale}>
-            {locale}
+            {getLocaleLanguage(locale)}
           </SelectItem>
         ))}
       </SelectContent>
     </Select>
   );
+}
+
+function getLocaleLanguage(locale: Locale) {
+  switch (locale) {
+    case "en":
+      return "English";
+    case "es":
+      return "Español";
+    case "de":
+      return "Deutsch";
+    case "fr":
+      return "Français";
+    case "zh-Hans":
+      return "简体中文";
+    case "zh-TW":
+      return "繁體中文";
+    default:
+      return locale.split("-")[0];
+  }
 }

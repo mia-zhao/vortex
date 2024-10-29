@@ -37,7 +37,10 @@ export default function Header() {
                     {header(`menu.${key}.name`)}
                   </Link>
                 ) : (
-                  <a href={header(`menu.${key}.link`)} className="header-link">
+                  <a
+                    href={`/${header(`menu.${key}.link`)}`}
+                    className="header-link"
+                  >
                     {header(`menu.${key}.name`)}
                   </a>
                 )}

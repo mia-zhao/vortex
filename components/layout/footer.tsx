@@ -140,10 +140,11 @@ export default function Footer() {
 }
 
 export function SimpleFooter({ className }: { className?: string }) {
+  const footer = useTranslations("footer");
   return (
     <div className={`border-muted-foreground text-center ${className ?? ""}`}>
       <p className="text-sm py-4">
-        &copy; {new Date().getFullYear()} Vortex. All rights reserved.
+        &copy; {new Date().getFullYear()} Vortex. {footer("message")}
       </p>
     </div>
   );
