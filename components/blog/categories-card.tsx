@@ -5,6 +5,7 @@ import { useTransition } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface CategoriesCardProps {
   categories: string[];
@@ -21,6 +22,7 @@ export default function CategoriesCard({
   const searchParams = useSearchParams();
   const [_, startTransition] = useTransition();
   const currentCategory = searchParams.get("category");
+  const t = useTranslations("blog.categories");
 
   const handleCategoryClick = (category: string) => {
     startTransition(() => {
@@ -37,7 +39,7 @@ export default function CategoriesCard({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Categories</CardTitle>
+        <CardTitle>{t("title")}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex flex-wrap gap-2">

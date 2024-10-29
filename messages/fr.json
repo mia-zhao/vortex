@@ -125,5 +125,30 @@
     "description": "Nous nous excusons pour le désagrément.",
     "tryAgain": "Réessayer",
     "backHome": "Retour à l'accueil"
+  },
+  "blog": {
+    "title": "Notre Blog",
+    "search": {
+      "title": "Recherche",
+      "placeholder": "Rechercher des articles de blog",
+      "search": "Rechercher"
+    },
+    "categories": {
+      "title": "Catégories"
+    },
+    "recentPosts": {
+      "title": "Articles Récents",
+      "noRecentPosts": "Aucun article récent disponible."
+    },
+    "readMore": "Lire la suite",
+    "dateAndAuthor": "{date} | Par {author}",
+    "postCount": "Affichage de {count} sur {total} articles",
+    "postNotFound": "Aucun article de blog trouvé correspondant à vos critères.",
+    "breadcrumb": {
+      "home": "Accueil",
+      "blog": "Blog"
+    },
+    "author": "Auteur : {author}",
+    "lastUpdate": "Dernière mise à jour : {date}"
   }
 }

@@ -125,5 +125,30 @@
     "description": "Pedimos disculpas por las molestias.",
     "tryAgain": "Intenta de nuevo",
     "backHome": "Regresar a Inicio"
+  },
+  "blog": {
+    "title": "Nuestro Blog",
+    "search": {
+      "title": "Buscar",
+      "placeholder": "Buscar publicaciones del blog",
+      "search": "Buscar"
+    },
+    "categories": {
+      "title": "Categorías"
+    },
+    "recentPosts": {
+      "title": "Publicaciones Recientes",
+      "noRecentPosts": "No hay publicaciones recientes disponibles."
+    },
+    "readMore": "Leer Más",
+    "dateAndAuthor": "{date} | Por {author}",
+    "postCount": "Mostrando {count} de {total} publicaciones",
+    "postNotFound": "No se encontraron publicaciones del blog que coincidan con sus criterios.",
+    "breadcrumb": {
+      "home": "Inicio",
+      "blog": "Blog"
+    },
+    "author": "Autor: {author}",
+    "lastUpdate": "Última Actualización: {date}"
   }
 }

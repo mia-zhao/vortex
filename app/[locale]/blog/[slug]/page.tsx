@@ -7,16 +7,25 @@ import {
 } from "@/content/blog/blog-registry";
 import BreadCrumb from "../breadcrumb";
 import Blog from "./blog";
+import { Locale } from "@/i18n/routing";
+import i18nConfig from "@/i18n/config";
 
 export const runtime = "edge";
 
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: BlogSlug };
+  params: { slug: BlogSlug; locale: Locale };
 }) {
-  const { slug } = params;
-  const rawContent = blogRegistry[slug];
+  const { slug, locale } = params;
+  const rawContents = blogRegistry[slug];
+
+  if (!rawContents) {
+    notFound();
+  }
+
+  const rawContent = await (rawContents[locale] ||
+    rawContents[i18nConfig.defaultLocale]);
 
   if (!rawContent) {
     notFound();

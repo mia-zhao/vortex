@@ -1,11 +1,27 @@
 import { compileMDX } from "next-mdx-remote/rsc";
-import howToUseMarkdownContent from "!!raw-loader!./how-to-use-markdown-in-next-js.mdx";
-import deployToCloudflareContent from "!!raw-loader!./deploy-to-cloudflare.mdx";
+import { Locale } from "@/i18n/routing";
+import i18nConfig from "@/i18n/config";
 
-export const blogRegistry = {
-  "how-to-use-markdown-in-next-js": howToUseMarkdownContent,
-  "deploy-to-cloudflare": deployToCloudflareContent,
-} as const;
+const BLOG_SLUGS = [
+  "how-to-use-markdown-in-next-js",
+  "deploy-to-cloudflare",
+] as const;
+
+export const blogRegistry: Record<string, Record<Locale, Promise<string>>> = {};
+
+for (const slug of BLOG_SLUGS) {
+  blogRegistry[slug] = {} as Record<Locale, Promise<string>>;
+
+  for (const locale of i18nConfig.locales) {
+    try {
+      blogRegistry[slug][locale] = import(
+        `!!raw-loader!./${locale}/${slug}.mdx`
+      ).then((m) => m.default);
+    } catch (e) {
+      console.warn(`No content found for ${locale}/${slug}`);
+    }
+  }
+}
 
 export type BlogSlug = keyof typeof blogRegistry;
 
@@ -20,18 +36,27 @@ export type BlogFrontmatter = {
 
 export type BlogPost = BlogFrontmatter & { slug: BlogSlug };
 
-export async function getBlogPosts() {
+export async function getBlogPosts(locale: Locale = i18nConfig.defaultLocale) {
   const posts: Array<BlogPost> = [];
 
-  for (const [slug, content] of Object.entries(blogRegistry) as [
-    BlogSlug,
-    string
-  ][]) {
-    const { frontmatter } = await compileMDX<BlogFrontmatter>({
-      source: content,
-      options: { parseFrontmatter: true },
-    });
-    posts.push({ ...frontmatter, slug });
+  for (const slug of BLOG_SLUGS) {
+    try {
+      const rawContent = await (blogRegistry[slug][locale] ||
+        blogRegistry[slug][i18nConfig.defaultLocale]);
+
+      if (!rawContent) {
+        continue;
+      }
+
+      const { frontmatter } = await compileMDX<BlogFrontmatter>({
+        source: rawContent,
+        options: { parseFrontmatter: true },
+      });
+
+      posts.push({ ...frontmatter, slug });
+    } catch (e) {
+      console.warn(`Failed to load blog post: ${slug}`, e);
+    }
   }
 
   return posts.sort(

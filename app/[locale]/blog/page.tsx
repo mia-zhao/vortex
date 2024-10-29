@@ -8,33 +8,43 @@ import {
 } from "@/components/ui/card";
 import { getBlogData } from "./_actions/search";
 import { BlogPost } from "@/content/blog/blog-registry";
-import { Link } from "@/i18n/routing";
-import { formatDate } from "@/lib/utils";
+import { Link, Locale } from "@/i18n/routing";
 import SearchForm from "@/components/blog/search-form";
 import CategoriesCard from "@/components/blog/categories-card";
+import { getTranslations, getFormatter } from "next-intl/server";
 
 export default async function BlogPage({
+  params,
   searchParams,
 }: {
+  params: { locale: Locale };
   searchParams: { q?: string; category?: string };
 }) {
+  const { locale } = params;
+
   const {
     posts,
     totalPosts,
     categoryCounts: filteredCounts,
     allCategories,
-  } = await getBlogData(searchParams.q || "", searchParams.category || "");
+  } = await getBlogData({
+    locale,
+    query: searchParams.q,
+    category: searchParams.category,
+  });
 
-  const { categoryCounts: totalCounts } = await getBlogData();
+  const { categoryCounts: totalCounts } = await getBlogData({ locale });
+
+  const t = await getTranslations("blog");
 
   return (
     <main className="bg-background py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-extrabold text-title mb-8">
-          Our Blog{" "}
+          {t("title")}
           {posts.length !== totalPosts && (
             <span className="text-lg font-normal text-muted-foreground ml-2">
-              (Showing {posts.length} of {totalPosts} posts)
+              ({t("postCount", { count: posts.length, total: totalPosts })})
             </span>
           )}
         </h1>
@@ -46,7 +56,7 @@ export default async function BlogPage({
             ) : (
               <Card className="p-6">
                 <p className="text-center text-muted-foreground">
-                  No blog posts found matching your criteria.
+                  {t("postNotFound")}
                 </p>
               </Card>
             )}
@@ -57,7 +67,7 @@ export default async function BlogPage({
             {/* Search */}
             <Card>
               <CardHeader>
-                <CardTitle>Search</CardTitle>
+                <CardTitle>{t("search.title")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <SearchForm />
@@ -80,44 +90,64 @@ export default async function BlogPage({
   );
 }
 
-const BlogPostCard = ({ post }: { post: BlogPost }) => (
-  <Card>
-    <CardHeader>
-      <CardTitle>{post.title}</CardTitle>
-    </CardHeader>
-    <CardContent>
-      <p className="text-body">{post.excerpt}</p>
-    </CardContent>
-    <CardFooter className="flex justify-between items-center">
-      <div className="text-sm text-muted-foreground">
-        {formatDate(post.date)} | By {post.author}
-      </div>
-      <Link href={`/blog/${post.slug}`} className="post-link">
-        Read More
-      </Link>
-    </CardFooter>
-  </Card>
-);
+const BlogPostCard = async ({ post }: { post: BlogPost }) => {
+  const t = await getTranslations("blog");
+  const format = await getFormatter();
 
-const RecentPostsCard = ({ blogPosts }: { blogPosts: Array<BlogPost> }) => (
-  <Card>
-    <CardHeader>
-      <CardTitle>Recent Posts</CardTitle>
-    </CardHeader>
-    <CardContent>
-      {blogPosts.length === 0 ? (
-        <p>No recent posts available.</p>
-      ) : (
-        <ul className="space-y-2">
-          {blogPosts.slice(0, 5).map((post) => (
-            <li key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="post-link">
-                {post.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </CardContent>
-  </Card>
-);
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{post.title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-body">{post.excerpt}</p>
+      </CardContent>
+      <CardFooter className="flex justify-between items-center">
+        <div className="text-sm text-muted-foreground">
+          {t("dateAndAuthor", {
+            date: format.dateTime(new Date(post.date), {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            }),
+            author: post.author,
+          })}
+        </div>
+        <Link href={`/blog/${post.slug}`} className="post-link">
+          {t("readMore")}
+        </Link>
+      </CardFooter>
+    </Card>
+  );
+};
+
+const RecentPostsCard = async ({
+  blogPosts,
+}: {
+  blogPosts: Array<BlogPost>;
+}) => {
+  const t = await getTranslations("blog.recentPosts");
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{t("title")}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {blogPosts.length === 0 ? (
+          <p>{t("noRecentPosts")}</p>
+        ) : (
+          <ul className="space-y-2">
+            {blogPosts.slice(0, 5).map((post) => (
+              <li key={post.slug}>
+                <Link href={`/blog/${post.slug}`} className="post-link">
+                  {post.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </CardContent>
+    </Card>
+  );
+};

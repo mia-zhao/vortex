@@ -121,5 +121,30 @@
     "description": "We apologize for the inconvenience.",
     "tryAgain": "Try again",
     "backHome": "Return Home"
+  },
+  "blog": {
+    "title": "Our Blog",
+    "search": {
+      "title": "Search",
+      "placeholder": "Search blog posts",
+      "search": "Search"
+    },
+    "categories": {
+      "title": "Categories"
+    },
+    "recentPosts": {
+      "title": "Recent Posts",
+      "noRecentPosts": "No recent posts available."
+    },
+    "readMore": "Read More",
+    "dateAndAuthor": "{date} | By {author}",
+    "postCount": "Showing {count} of {total} posts",
+    "postNotFound": "No blog posts found matching your criteria.",
+    "breadcrumb": {
+      "home": "Home",
+      "blog": "Blog"
+    },
+    "author": "Author: {author}",
+    "lastUpdate": "Last Update: {date}"
   }
 }

@@ -121,5 +121,30 @@
     "description": "Wir entschuldigen uns für die Unannehmlichkeiten.",
     "tryAgain": "Erneut versuchen",
     "backHome": "Zurück zur Startseite"
+  },
+  "blog": {
+    "title": "Unser Blog",
+    "search": {
+      "title": "Suche",
+      "placeholder": "Blogbeiträge suchen",
+      "search": "Suchen"
+    },
+    "categories": {
+      "title": "Kategorien"
+    },
+    "recentPosts": {
+      "title": "Neueste Beiträge",
+      "noRecentPosts": "Keine aktuellen Beiträge verfügbar."
+    },
+    "readMore": "Weiterlesen",
+    "dateAndAuthor": "{date} | Von {author}",
+    "postCount": "Zeige {count} von {total} Beiträgen",
+    "postNotFound": "Keine Blogbeiträge gefunden, die Ihren Kriterien entsprechen.",
+    "breadcrumb": {
+      "home": "Startseite",
+      "blog": "Blog"
+    },
+    "author": "Autor: {author}",
+    "lastUpdate": "Letzte Aktualisierung: {date}"
   }
 }

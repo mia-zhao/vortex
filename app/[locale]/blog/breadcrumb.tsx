@@ -6,17 +6,20 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { getTranslations } from "next-intl/server";
 
-export default function BreadCrumb({ title }: { title: string }) {
+export default async function BreadCrumb({ title }: { title: string }) {
+  const t = await getTranslations("blog.breadcrumb");
+
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink href="/">{t("home")}</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/blog">blog</BreadcrumbLink>
+          <BreadcrumbLink href="/blog">{t("blog")}</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

@@ -1,6 +1,6 @@
 import { BlogFrontmatter } from "@/content/blog/blog-registry";
 import React from "react";
-import { formatDate } from "@/lib/utils";
+import { useFormatter, useTranslations } from "next-intl";
 
 export default function Blog({
   frontmatter,
@@ -9,12 +9,19 @@ export default function Blog({
   frontmatter: BlogFrontmatter;
   content: React.ReactNode;
 }) {
+  const t = useTranslations("blog");
+  const formatter = useFormatter();
+
   return (
     <article className="blog max-w-3xl mx-auto p-6 rounded-lg shadow-md">
       <h1>{frontmatter.title}</h1>
-      <div className="author">Author: {frontmatter.author}</div>
+      <div className="author">
+        {t("author", { author: frontmatter.author })}
+      </div>
       <div className="update-time">
-        Last Update: {formatDate(frontmatter.lastmod)}
+        {t("lastUpdate", {
+          date: formatter.dateTime(new Date(frontmatter.lastmod)),
+        })}
       </div>
       {content}
     </article>

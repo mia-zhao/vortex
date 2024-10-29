@@ -60,7 +60,7 @@ export default function SearchForm() {
       </div>
       <Button type="submit" disabled={isPending} className="shrink-0">
         <Search className="h-4 w-4 mr-2" />
-        Search
+        {t("search")}
       </Button>
     </form>
   );

@@ -1,4 +1,5 @@
 import { getBlogPosts, BlogPost } from "@/content/blog/blog-registry";
+import { Locale } from "@/i18n/routing";
 
 type BlogResponse = {
   posts: BlogPost[];
@@ -7,13 +8,17 @@ type BlogResponse = {
   allCategories: string[];
 };
 
-export async function getBlogData(
-  query: string = "",
-  category: string = ""
-): Promise<BlogResponse> {
-  const allPosts = await getBlogPosts();
+export async function getBlogData({
+  locale,
+  query,
+  category,
+}: {
+  locale?: Locale;
+  query?: string;
+  category?: string;
+}): Promise<BlogResponse> {
+  const allPosts = await getBlogPosts(locale);
 
-  // Get all unique categories and their total counts (unfiltered)
   const allCategoryCounts = allPosts.reduce((acc, post) => {
     post.categories.forEach((cat) => {
       acc[cat] = (acc[cat] || 0) + 1;
@@ -21,10 +26,8 @@ export async function getBlogData(
     return acc;
   }, {} as Record<string, number>);
 
-  // Sort categories by name
   const allCategories = Object.keys(allCategoryCounts).sort();
 
-  // Apply filters
   let filteredPosts = allPosts;
 
   if (category) {
@@ -47,7 +50,6 @@ export async function getBlogData(
     });
   }
 
-  // Get counts for filtered posts
   const filteredCategoryCounts = filteredPosts.reduce((acc, post) => {
     post.categories.forEach((cat) => {
       acc[cat] = (acc[cat] || 0) + 1;
