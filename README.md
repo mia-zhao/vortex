@@ -50,6 +50,7 @@ CLOUDFLARE_API_TOKEN=your-api-token
 CLOUDFLARE_ACCOUNT_ID=your-account-id
 # variables
 CLOUDFLARE_PROJECT_NAME=your-project-name
+CLOUDFLARE_DEPLOY_URL=your-deploy-url
 ```
 
 and push to the `main` branch.

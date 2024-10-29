@@ -21,6 +21,11 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Set Environment Variables
+        run: |
+          echo "CLOUDFLARE_PROJECT_NAME=${{ vars.CLOUDFLARE_PROJECT_NAME }}" >> $GITHUB_ENV
+          echo "CLOUDFLARE_DEPLOY_URL=${{ vars.CLOUDFLARE_DEPLOY_URL }}" >> $GITHUB_ENV
+
       - name: Build Project
         run: pnpm run pages:build
 
@@ -32,4 +37,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./.vercel/output/static --project-name=vortex-app
+          command: pages deploy ./.vercel/output/static --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }}

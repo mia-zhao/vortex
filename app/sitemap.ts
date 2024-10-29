@@ -4,7 +4,7 @@ import i18nConfig from "@/i18n/config";
 const { locales, defaultLocale } = i18nConfig;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://vortex-app.pages.dev";
+  const baseUrl = process.env.CLOUDFLARE_DEPLOY_URL;
 
   const routes = ["", "/blog"];
 

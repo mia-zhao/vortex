@@ -19,7 +19,7 @@ export async function generateMetadata({
     .split(",")
     .map((keyword) => keyword.trim());
 
-  const baseUrl = "https://vortex-app.pages.dev";
+  const baseUrl = process.env.CLOUDFLARE_DEPLOY_URL;
   const url = locale === defaultLocale ? baseUrl : `${baseUrl}/${locale}`;
 
   return {
