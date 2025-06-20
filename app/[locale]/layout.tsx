@@ -1,9 +1,14 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
+import BaseLayout from "@/components/layout/base-layout";
+import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import i18nConfig from "@/i18n/config";
-import BaseLayout from "@/components/layout/base-layout";
 
-export const runtime = "edge";
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale: locale}));
+}
 
 export async function generateMetadata({
   params: { locale },
@@ -49,10 +54,6 @@ export async function generateMetadata({
       ),
     },
   };
-}
-
-export async function generateStaticParams() {
-  return i18nConfig.locales.map((locale) => ({ lang: locale }));
 }
 
 export default async function Layout({

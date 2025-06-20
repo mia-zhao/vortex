@@ -192,4 +192,13 @@ const config: Config = {
   // watchman: true,
 };
 
-export default createJestConfig(config);
+// export default createJestConfig(config);
+
+module.exports = async () => ({
+  ...(await createJestConfig({
+    testEnvironment: 'jsdom',
+    rootDir: './'
+  })()),
+  // https://github.com/vercel/next.js/issues/40183
+  transformIgnorePatterns: ['node_modules/(?!next-intl)/']
+});

@@ -1,5 +1,4 @@
 import { getBlogPosts, BlogPost } from "@/content/blog/blog-registry";
-import { Locale } from "@/i18n/routing";
 
 type BlogResponse = {
   posts: BlogPost[];
@@ -13,7 +12,7 @@ export async function getBlogData({
   query,
   category,
 }: {
-  locale?: Locale;
+  locale?: string;
   query?: string;
   category?: string;
 }): Promise<BlogResponse> {

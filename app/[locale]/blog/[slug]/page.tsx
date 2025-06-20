@@ -6,15 +6,20 @@ import {
 } from "@/content/blog/blog-registry";
 import BreadCrumb from "../breadcrumb";
 import Blog from "./blog";
-import { Locale } from "@/i18n/routing";
 import i18nConfig from "@/i18n/config";
+import { setRequestLocale } from "next-intl/server";
+
+export const dynamicParams = false;
 
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: BlogSlug; locale: Locale };
+  params: { slug: BlogSlug; locale: string };
 }) {
   const { slug, locale } = params;
+
+  setRequestLocale(locale);
+
   const rawContents = blogRegistry[slug];
 
   if (!rawContents) {
@@ -40,8 +45,3 @@ export default async function BlogPost({
   );
 }
 
-export function generateStaticParams() {
-  return Object.keys(blogRegistry).map((slug) => ({
-    slug,
-  }));
-}

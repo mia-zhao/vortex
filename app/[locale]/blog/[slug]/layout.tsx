@@ -1,8 +1,15 @@
 import { Suspense } from "react";
 import "./blog.css";
 import LoadingSkeleton from "./loading-skeleton";
+import { BLOG_SLUGS } from "@/content/blog/blog-registry";
 
-export const runtime = "edge";
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return BLOG_SLUGS.map((slug) => ({
+    slug,
+  }));
+}
 
 export default function Layout({
   children,

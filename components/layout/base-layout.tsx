@@ -1,10 +1,10 @@
 import React, { ReactNode } from "react";
-import { NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { getMessages } from "next-intl/server";
-import { Locale } from "@/i18n/routing";
-import BaseError from "./error";
+import { Locale, routing } from "@/i18n/routing";
+import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 
 const geistSans = localFont({
   src: "../../public/fonts/GeistVF.woff",
@@ -24,26 +24,11 @@ export default async function BaseLayout({
   children: ReactNode;
   locale?: Locale;
 }) {
-  let messages;
-  try {
-    messages = await getMessages();
-  } catch (error) {
-    console.error("Failed to load messages:", error);
-    return (
-      <html>
-        <body>
-          <BaseError
-            errorMsg={{
-              title: "Oops! Something went wrong",
-              description: "We apologize for the inconvenience.",
-              tryAgain: "Try again",
-              backHome: "Return Home",
-            }}
-          />
-        </body>
-      </html>
-    );
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
   }
+
+  setRequestLocale(locale);
 
   return (
     // The suppressHydrationWarning prop is set to true to suppress warnings related to
@@ -54,7 +39,7 @@ export default async function BaseLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider messages={messages} locale={locale}>
+        <NextIntlClientProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

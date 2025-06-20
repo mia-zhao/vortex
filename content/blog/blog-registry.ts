@@ -2,7 +2,7 @@ import { Locale } from "@/i18n/routing";
 import i18nConfig from "@/i18n/config";
 import matter from "gray-matter";
 
-const BLOG_SLUGS = [
+export const BLOG_SLUGS = [
   "how-to-use-markdown-in-next-js",
   "deploy-to-cloudflare",
 ] as const;

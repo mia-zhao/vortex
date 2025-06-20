@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { getBlogData } from "./_actions/search";
 import { BlogPost } from "@/content/blog/blog-registry";
-import { Link, Locale } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 import SearchForm from "@/components/blog/search-form";
 import CategoriesCard from "@/components/blog/categories-card";
 import { getTranslations, getFormatter } from "next-intl/server";
@@ -19,7 +19,7 @@ export default async function BlogPage({
   params,
   searchParams,
 }: {
-  params: { locale: Locale };
+  params: { locale: string };
   searchParams: { q?: string; category?: string };
 }) {
   const { locale } = params;

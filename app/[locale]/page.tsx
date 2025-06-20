@@ -5,8 +5,13 @@ import Features from "@/components/features";
 import Pricing from "@/components/pricing";
 import ScrollButton from "@/components/common/scroll-button";
 import CookieConsent from "@/components/common/cookie-consent";
+import { setRequestLocale } from "next-intl/server";
 
-export default function Page() {
+export const dynamicParams = false;
+
+export default function Page({ params }: { params: { locale: string } }) {
+  const locale = params.locale;
+  setRequestLocale(locale);
   return (
     <>
       <Header />

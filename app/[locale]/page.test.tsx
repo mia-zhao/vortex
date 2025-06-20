@@ -19,6 +19,14 @@ jest.mock("next-intl", () => {
   };
 });
 
+jest.mock("next-intl/server", () => {
+  const originalModule = jest.requireActual("next-intl/server");
+  return {
+    ...originalModule,
+    setRequestLocale: jest.fn(),
+  };
+});
+
 jest.mock("next-intl/navigation", () => {
   const originalModule = jest.requireActual("next-intl/navigation");
   const originalCreateNavigationReturn = originalModule.createNavigation();
@@ -35,7 +43,7 @@ test("renders /en/ with English content", async () => {
   render(
     <MemoryRouter>
       <NextIntlClientProvider locale="en">
-        <LocalePage />
+        <LocalePage params={{ locale: "en" }} />
       </NextIntlClientProvider>
     </MemoryRouter>
   );
