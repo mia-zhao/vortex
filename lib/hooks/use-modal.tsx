@@ -6,6 +6,7 @@ import {
   useState,
   useCallback,
   useMemo,
+  JSX,
 } from "react";
 
 export interface ModalProps {

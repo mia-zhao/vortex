@@ -1,16 +1,20 @@
+import CookieConsent from "@/components/common/cookie-consent";
+import ScrollButton from "@/components/common/scroll-button";
+import Features from "@/components/features";
+import Hero from "@/components/hero";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
-import Hero from "@/components/hero";
-import Features from "@/components/features";
 import Pricing from "@/components/pricing";
-import ScrollButton from "@/components/common/scroll-button";
-import CookieConsent from "@/components/common/cookie-consent";
 import { setRequestLocale } from "next-intl/server";
 
 export const dynamicParams = false;
 
-export default function Page({ params }: { params: { locale: string } }) {
-  const locale = params.locale;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const locale = (await params).locale;
   setRequestLocale(locale);
   return (
     <>

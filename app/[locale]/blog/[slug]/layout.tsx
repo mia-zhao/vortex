@@ -11,11 +11,11 @@ export function generateStaticParams() {
   }));
 }
 
-export default function Layout({
+export default async function Layout({
   children,
 }: {
   children: React.ReactNode;
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   return (
     <div className="max-w-7xl mx-auto px-4 my-8 sm:px-6 lg:px-8">

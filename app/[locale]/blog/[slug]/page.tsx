@@ -1,22 +1,22 @@
-import { notFound } from "next/navigation";
 import {
   blogRegistry,
   type BlogSlug,
   getBlogPost,
 } from "@/content/blog/blog-registry";
-import BreadCrumb from "../breadcrumb";
-import Blog from "./blog";
 import i18nConfig from "@/i18n/config";
 import { setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import BreadCrumb from "../breadcrumb";
+import Blog from "./blog";
 
 export const dynamicParams = false;
 
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: BlogSlug; locale: string };
+  params: Promise<{ slug: BlogSlug; locale: string }>;
 }) {
-  const { slug, locale } = params;
+  const { slug, locale } = await params;
 
   setRequestLocale(locale);
 
@@ -44,4 +44,3 @@ export default async function BlogPost({
     </>
   );
 }
-

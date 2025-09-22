@@ -19,10 +19,11 @@ export default async function BlogPage({
   params,
   searchParams,
 }: {
-  params: { locale: string };
-  searchParams: { q?: string; category?: string };
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ q?: string; category?: string }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
+  const { q, category } = await searchParams;
 
   const {
     posts,
@@ -31,8 +32,8 @@ export default async function BlogPage({
     allCategories,
   } = await getBlogData({
     locale,
-    query: searchParams.q,
-    category: searchParams.category,
+    query: q,
+    category: category,
   });
 
   const { categoryCounts: totalCounts } = await getBlogData({ locale });

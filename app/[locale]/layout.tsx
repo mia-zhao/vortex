@@ -11,10 +11,11 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const {locale} = await params;
   const t = await getTranslations({ locale, namespace: "MetaData" });
   const { locales, defaultLocale } = i18nConfig;
 
@@ -61,10 +62,11 @@ export default async function Layout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
+  const {locale} = await params;
   return (
-    <BaseLayout locale={params.locale}>
+    <BaseLayout locale={locale}>
       <div className="relative min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
         {children}
       </div>
