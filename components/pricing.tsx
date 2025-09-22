@@ -48,7 +48,7 @@ export default function Pricing() {
                   <CardTitle>{plan.name}</CardTitle>
                   <CardDescription>{plan.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow">
+                <CardContent className="grow">
                   <p className="text-4xl font-bold mb-4">
                     {plan.monthlyPrice}
                     <span className="text-xl font-normal text-muted-foreground">
@@ -69,7 +69,7 @@ export default function Pricing() {
                 <CardFooter>
                   <Button
                     className="w-full"
-                    variant={plan.buttonVariant as "default" | "outline"}
+                    variant={plan.buttonVariant as "default" | "outline-solid"}
                   >
                     {plan.buttonText}
                   </Button>

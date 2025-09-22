@@ -13,7 +13,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="shadow-sm">
+    <header className="shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
         <div className="flex items-center text-primary mb-4 sm:mb-0">
           <img

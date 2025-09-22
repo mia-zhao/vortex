@@ -67,7 +67,7 @@ export default async function Layout({
   const {locale} = await params;
   return (
     <BaseLayout locale={locale}>
-      <div className="relative min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
+      <div className="relative min-h-screen flex flex-col font-(family-name:--font-geist-sans)">
         {children}
       </div>
     </BaseLayout>

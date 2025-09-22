@@ -57,7 +57,7 @@
       "description": "Ideal para individuos y pequeñas empresas",
       "features": "Alojamiento de Sitio Web, Soporte Básico, 1GB de Almacenamiento, Certificado SSL",
       "buttonText": "Comienza Gratis",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     },
     "standard": {
@@ -77,7 +77,7 @@
       "description": "Diseñado para grandes organizaciones que necesitan características avanzadas",
       "features": "Todas las Características Estándar, Almacenamiento Ilimitado, Soporte Prioritario, Características de Seguridad Avanzadas, Integraciones Personalizadas",
       "buttonText": "Regístrate para Premium",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     }
   },

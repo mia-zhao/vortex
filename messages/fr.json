@@ -59,7 +59,7 @@
       "description": "Idéal pour les particuliers et les petites entreprises",
       "features": "Hébergement de Site Web, Support de Base, 1 Go de Stockage, Certificat SSL",
       "buttonText": "Commencez Gratuitement",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     },
     "standard": {
@@ -79,7 +79,7 @@
       "description": "Conçu pour les grandes organisations nécessitant des fonctionnalités avancées",
       "features": "Toutes les Fonctionnalités Standard, Stockage Illimité, Support Prioritaire, Fonctionnalités de Sécurité Avancées, Intégrations Personnalisées",
       "buttonText": "Inscrivez-vous pour Premium",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     }
   },

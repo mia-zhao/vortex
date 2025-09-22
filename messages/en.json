@@ -56,7 +56,7 @@
       "description": "Ideal for individuals and small businesses",
       "features": "Website Hosting, Basic Support, 1GB Storage, SSL Certificate",
       "buttonText": "Get Started for Free",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     },
     "standard": {
@@ -76,7 +76,7 @@
       "description": "Designed for large organizations needing advanced features",
       "features": "All Standard Features, Unlimited Storage, Priority Support, Advanced Security Features, Custom Integrations",
       "buttonText": "Sign Up for Premium",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     }
   },

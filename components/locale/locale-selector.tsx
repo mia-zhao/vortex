@@ -31,7 +31,7 @@ export default function LocaleSelector() {
 
   return (
     <Select value={selectedLocale} onValueChange={handleValueChange}>
-      <SelectTrigger className="w-[100px] focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:outline-none">
+      <SelectTrigger className="w-[100px] focus:outline-hidden focus:ring-0 focus:ring-offset-0 focus-visible:outline-hidden">
         <SelectValue placeholder={selectedLocale} />
       </SelectTrigger>
       <SelectContent align="end">

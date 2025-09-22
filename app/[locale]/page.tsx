@@ -19,7 +19,7 @@ export default async function Page({
   return (
     <>
       <Header />
-      <main className="flex flex-col gap-8 flex-grow items-center sm:items-start">
+      <main className="flex flex-col gap-8 grow items-center sm:items-start">
         <Hero />
         <Features />
         <Pricing />

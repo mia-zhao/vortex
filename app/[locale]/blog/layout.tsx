@@ -20,7 +20,7 @@ export default async function Layout({params, children}: { params: Promise<{ loc
   return (
     <>
       <Header />
-      <div className="flex-grow w-full">
+      <div className="grow w-full">
         <Suspense fallback={<LoadingSkeleton />}>{children}</Suspense>
       </div>
       <footer className="py-4">

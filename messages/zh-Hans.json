@@ -57,7 +57,7 @@
       "description": "适合个人和小型企业",
       "features": "网站托管, 基本支持, 1 GB存储空间, SSL证书",
       "buttonText": "免费开始",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     },
     "standard": {
@@ -77,7 +77,7 @@
       "description": "为需要高级功能的大型组织设计",
       "features": "所有标准功能, 无限存储空间, 优先支持, 高级安全功能, 自定义集成",
       "buttonText": "注册高级版",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     }
   },

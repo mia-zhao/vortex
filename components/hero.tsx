@@ -16,7 +16,7 @@ export default function Hero() {
             {hero("description")}
           </p>
           <div className="mt-5 max-w-md mx-auto flex flex-col sm:flex-row sm:justify-center md:mt-8">
-            <Button size="lg" className="w-1/2 mx-auto rounded-md shadow">
+            <Button size="lg" className="w-1/2 mx-auto rounded-md shadow-sm">
               <Link href="https://github.com/mia-zhao/vortex">
                 {hero("primary_cta")}
               </Link>

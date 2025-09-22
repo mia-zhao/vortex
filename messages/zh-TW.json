@@ -57,7 +57,7 @@
       "description": "適合個人和小型企業",
       "features": "網站託管, 基本支持, 1 GB 存儲空間, SSL 證書",
       "buttonText": "免費開始",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     },
     "standard": {
@@ -77,7 +77,7 @@
       "description": "為需要高級功能的大型組織設計",
       "features": "所有標準版功能, 無限存儲空間, 優先支持, 高級安全功能, 自定義集成",
       "buttonText": "註冊高級版",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     }
   },

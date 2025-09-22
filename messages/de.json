@@ -58,7 +58,7 @@
       "description": "Ideal für Einzelpersonen und kleine Unternehmen",
       "features": "Website-Hosting, Basis-Support, 1 GB Speicherplatz, SSL-Zertifikat",
       "buttonText": "Kostenlos starten",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     },
     "standard": {
@@ -76,7 +76,7 @@
       "description": "Entwickelt für große Organisationen, die fortgeschrittene Funktionen benötigen",
       "features": "Alle Standard-Funktionen, Unbegrenzter Speicherplatz, Prioritäts-Support, Erweiterte Sicherheitsfunktionen, Benutzerdefinierte Integrationen",
       "buttonText": "Für Premium anmelden",
-      "buttonVariant": "outline",
+      "buttonVariant": "outline-solid",
       "mostPopular": "false"
     }
   },
